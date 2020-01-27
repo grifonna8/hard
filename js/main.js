@@ -1,18 +1,42 @@
-let money = 50000,
-income = '10000',
-addExpenses = 'Еда, съём, развлечения, интернет, животные',
-deposit = true,
-mission = 1000000,
-period = 8,
-budgetDay = null;
+'use strict';
+let lang = '',
+matrix = [
+  ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'],
+  ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+],
+namePerson = '';
 
-console.log(typeof money);
-console.log(typeof income);
-console.log(typeof deposit);
-console.log(addExpenses.length);
-console.log('Период равен', period, 'месяцев');
-console.log('Цель заработать', mission, 'рублей');
-console.log((addExpenses.toLowerCase()).split(', '));
-budgetDay = money / 30;
-console.log(budgetDay);
-// alert("Она пытается в JS");
+lang = prompt('Введите значение ru или en');
+
+if (lang === 'ru') {
+  console.log('понедельник\nвторник\nсреда\nчетверг\nпятница\nсуббота\nвоскресенье');
+} else {
+  console.log('Monday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday');
+}
+
+switch(lang) {
+  case 'ru':
+    console.log('понедельник\nвторник\nсреда\nчетверг\nпятница\nсуббота\nвоскресенье');
+    break;
+  case 'en':
+    console.log('Monday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday');
+    break;
+}
+
+function ru(){
+  for (let i = 0; i < 7; i++) {
+    console.log(matrix[0][i]);
+  }
+}
+
+function en(){
+  for (let i = 0; i < 7; i++) {
+    console.log(matrix[1][i]);
+  } 
+}
+
+lang === 'ru' ? ru() : en();
+
+namePerson = prompt('Введите имя');
+namePerson === 'Артем' ? console.log('Директор') :
+namePerson === 'Максим' ? console.log('Преподаватель') : console.log('Студент');
