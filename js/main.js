@@ -1,18 +1,28 @@
-let money = 50000,
-income = '10000',
-addExpenses = 'Еда, съём, развлечения, интернет, животные',
-deposit = true,
-mission = 1000000,
-period = 8,
-budgetDay = null;
+'use strict';
 
-console.log(typeof money);
-console.log(typeof income);
-console.log(typeof deposit);
-console.log(addExpenses.length);
-console.log('Период равен', period, 'месяцев');
-console.log('Цель заработать', mission, 'рублей');
-console.log((addExpenses.toLowerCase()).split(', '));
-budgetDay = money / 30;
-console.log(budgetDay);
-// alert("Она пытается в JS");
+let arr = ['2564', '4846', '88797', '49968996', '8966', '336', '97778979'];
+
+for (let i = 0; i < 7; i++){
+  let len, el, res = 0;
+  len = arr[i].length;
+  len--;
+  el = +arr[i];
+  res = Math.floor(el / (10 ** len));
+  if (res === 2 || res === 4){
+    console.log(arr[i]);
+  }
+}
+
+let n = 100;
+
+enumeration: /* создаем метку */
+for (let i = 2; i <= n; i++) {
+
+  for (let j = 2; j < i; j++) {
+    if (i % j === 0){
+      continue enumeration;
+    }
+  }
+
+  console.log(i +':делители этого числа ' + 1 + ' и ' +i);
+}
