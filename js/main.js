@@ -19,11 +19,11 @@ function change(data){
   if (typeof(data) !== 'string'){
     return 'введена не строка';
   } else {
-    if ((data.trim()).length < 30){
-      return data.trim();
+    let m = '';
+    m = data.trim();
+    if (m.length < 30){
+      return m;
     } else {
-      let m = '';
-      m = data.trim();
       return m.substring(0,30) + '...';
     }
   }
