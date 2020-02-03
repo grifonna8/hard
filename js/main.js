@@ -52,7 +52,7 @@ function bot(){
       } else if (answer === 0) {
         return alert('Игра окончена');
       }
-    } else if (answer !== 0){
+    } else if (answer === 0){
       alert('Введи число');
       answer = +prompt('Угадай число от 1 до 100');
       return bot(); 
