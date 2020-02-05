@@ -1,18 +1,23 @@
-let money = 50000,
-income = '10000',
-addExpenses = 'Еда, съём, развлечения, интернет, животные',
-deposit = true,
-mission = 1000000,
-period = 8,
-budgetDay = null;
+'use strict';
 
-console.log(typeof money);
-console.log(typeof income);
-console.log(typeof deposit);
-console.log(addExpenses.length);
-console.log('Период равен', period, 'месяцев');
-console.log('Цель заработать', mission, 'рублей');
-console.log((addExpenses.toLowerCase()).split(', '));
-budgetDay = money / 30;
-console.log(budgetDay);
-// alert("Она пытается в JS");
+let week = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'];
+const nowTime = (new Date().getDay() - 1);
+console.log(nowTime);
+  for (let i = 0; i < week.length; i++){
+    let div = document.createElement('div');
+/*     console.log(nowTime.getDay()); */
+    if (week[i] !== 'суббота' && week[i] !== 'воскресенье'){
+      div.innerHTML = week[i];
+      document.body.append(div);
+    } else {
+      div.innerHTML ='<i>' + week[i] + '</i>';
+      document.body.append(div);
+    }
+    if (i === nowTime && nowTime !== 0){
+      div.innerHTML ='<b>' + week[i] + '</b>';
+      document.body.append(div);
+    } else if (nowTime === 0) {
+      div.innerHTML ='<b>' + week[6] + '</b>';
+      document.body.append(div);
+    }
+}
