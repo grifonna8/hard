@@ -13,14 +13,17 @@ console.log(nowTime);
       div.innerHTML ='<i>' + week[i] + '</i>';
       document.body.append(div);
     }
-    if (i === nowTime && nowTime !== 0 && nowTime !== -1){
+    if (i === nowTime && nowTime !== 0 && nowTime !== -1 && nowTime !== 5){
       div.innerHTML ='<b>' + week[i] + '</b>';
+      document.body.append(div);
+    } else if (i === nowTime && nowTime === 5){
+      div.innerHTML ='<b>' + '<i>' + week[5] + '</i>' + '</b>';
       document.body.append(div);
     } else if (i === nowTime && nowTime === 0) {
       div.innerHTML ='<b>' + week[0] + '</b>';
       document.body.append(div);
     } else if (i === 6 && nowTime === -1) {
-      div.innerHTML ='<b>' + week[6] + '</b>';
+      div.innerHTML ='<b>' + '<i>' + week[6] + '</i>' + '</b>';
       document.body.append(div);
     }
 }
