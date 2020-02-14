@@ -41,9 +41,16 @@ word = function(){
     return hour;
   }
 };
-document.write('Сегодня ' + weekday[day.getDay()] + ', ' + day.getDate() + ' ' + month[day.getMonth()] + ' ' + 
-day.getFullYear() + ' года, ' + day.getHours() + word() + day.getMinutes() + ' минут ' + 
-day.getSeconds() + ' секунд');
+
+let wrapper = document.createElement('div');
+wrapper.className = 'wrapper';
+document.body.appendChild(wrapper);
+
+let out = document.createElement('div');
+out.innerText = 'Сегодня ' + weekday[day.getDay()] + ', ' + day.getDate() + ' ' + 
+month[day.getMonth()] + ' ' + day.getFullYear() + ' года, ' + day.getHours() + word() + day.getMinutes() +
+ ' минут ' + day.getSeconds() + ' секунд';
+wrapper.appendChild(out);
 
 /* одна строчка кода, которая сразу выводит даты и время с нулями перед цифрами от 1-9 */
 /* document.write('<br>' + day.toLocaleString()); */
@@ -78,7 +85,13 @@ check = function(){
 };
 check();
 
+let out1 = document.createElement('div');
+out1.className = 'out1';
+document.body.appendChild(out1);
+
 timer = setInterval(function() {
-  document.write('<br>' + date1 + '.' + month1 + '.' + 
-day.getFullYear() + ' - ' + hour1 + ':' + minute1 + ':' + sec1)
+    day = new Date();
+    check();
+    document.querySelector('.out1').innerText = date1 + '.' + month1 + '.' + 
+  day.getFullYear() + ' - ' + hour1 + ':' + minute1 + ':' + sec1;
 }, 1000);
